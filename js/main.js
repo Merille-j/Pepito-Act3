@@ -8,7 +8,6 @@
       : 'linear-gradient(to bottom, rgba(22, 9, 32, 0.97) 0%, transparent 100%)';
   }, { passive: true });
 
-  // Highlight active nav link based on current page
   const page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-drawer a').forEach(a => {
     const href = a.getAttribute('href');
@@ -18,7 +17,7 @@
   });
 })();
 
-/* MOBILE DRAWER */
+/* MOBILE DRAWER — toggle open/close */
 (function () {
   const toggle = document.getElementById('nav-toggle');
   const drawer = document.getElementById('mobile-drawer');
@@ -30,7 +29,6 @@
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
-  // Close drawer on link click
   drawer.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       drawer.classList.remove('open');
@@ -40,7 +38,7 @@
   });
 })();
 
-/*  SCROLL REVEAL */
+/* SCROLL REVEAL — fade-up on [data-reveal] elements */
 (function () {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
@@ -72,7 +70,7 @@
   document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
 })();
 
-/* SKILL BARS */
+/* SKILL BARS — animate width when scrolled into view */
 (function () {
   const bars = document.querySelectorAll('.bar-fill');
   if (!bars.length) return;
@@ -99,7 +97,7 @@
   bars.forEach(b => io.observe(b));
 })();
 
-/*  PROJECT FILTER */
+/* PROJECT FILTER — show/hide cards by category */
 (function () {
   const pills = document.querySelectorAll('.filter-pill');
   const cards = document.querySelectorAll('.project-card');
@@ -126,7 +124,7 @@
   });
 })();
 
-/* CONTACT FORM — success state */
+/* CONTACT FORM — validate inputs then show success state */
 (function () {
   const form = document.getElementById('contact-form');
   const confirm = document.getElementById('sent-confirm');
@@ -134,6 +132,39 @@
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    // Clear previous errors
+    form.querySelectorAll('.field-error').forEach(el => el.remove());
+    form.querySelectorAll('input, textarea').forEach(el => el.style.borderColor = '');
+
+    // Validate required fields
+    const fields = [
+      { id: 'name',    msg: 'Name is required' },
+      { id: 'email',  msg: 'A valid email is required' },
+      { id: 'message', msg: 'Message is required' },
+    ];
+
+    let valid = true;
+
+    fields.forEach(({ id, msg }) => {
+      const el = document.getElementById(id);
+      const isEmpty = !el.value.trim();
+      const isInvalidEmail = id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+
+      if (isEmpty || isInvalidEmail) {
+        el.style.borderColor = '#f472b6';
+        const err = document.createElement('p');
+        err.className = 'field-error';
+        err.style.cssText = 'color:#f472b6;font-size:0.78rem;margin:4px 0 0;';
+        err.textContent = msg;
+        el.parentElement.appendChild(err);
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    // Show success state
     form.style.transition = 'opacity 0.4s ease';
     form.style.opacity = '0';
     setTimeout(() => {
@@ -148,7 +179,7 @@
   });
 })();
 
-/* Main Hero — random orbs + stars */
+/* HERO ORBS + STARS — randomise position and timing */
 (function () {
   document.querySelectorAll('.hero-orb').forEach(orb => {
     const x = 10 + Math.random() * 80;
