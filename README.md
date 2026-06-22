@@ -79,16 +79,6 @@ python3 -m http.server 8000
 # Node (npx)
 npx serve .
 ```
-
----
-
-## Deploy to GitHub Pages
-
-1. Push this folder as the root of your repo
-2. Go to **Settings → Pages**
-3. Set Source to `main` branch, folder `/` (root)
-4. Save — your site will be live at `https://your-username.github.io/repo-name/`
-
 ---
 
 ## Projects Included
