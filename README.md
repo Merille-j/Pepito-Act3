@@ -1,6 +1,6 @@
 # Merille Janine Pepito — Portfolio
 
-A 5-page personal portfolio site built with plain HTML, CSS, and JavaScript — styled after a dark, elegant Figma design reference (Italiana / Tangerine / Raleway / DM Sans fonts, deep purple background, pink-purple gradient accents).
+A 5-page personal portfolio site built with plain HTML, CSS, and JavaScript — developed in compliance to Web Development academic curriculum.
 
 ---
 
