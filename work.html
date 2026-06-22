@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Merille Janine Pepito</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <span class="spark-icon">✦</span>
+      <span>Merille Pepito</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-hire">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span class="bar"></span><span class="bar short"></span><span class="bar"></span>
+    </button>
+  </nav>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="work.html" class="active">Work</a>
+    <a href="skills.html">Skills</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <div class="glow" style="width:500px;height:500px;top:-60px;right:-100px;background:rgba(244,114,182,0.1)"></div>
+    <div class="glow" style="width:400px;height:400px;bottom:100px;left:-150px;background:rgba(168,85,247,0.09)"></div>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <p class="eyebrow">Selected Projects</p>
+      <div class="page-header-row">
+        <h1>My Work</h1>
+        <span class="page-tag">Portfolio</span>
+      </div>
+      <p class="lede">A collection of things I've built — full-stack systems, research tools, and UI prototypes.</p>
+    </div>
+
+    <!-- WORK SECTION -->
+    <section class="work-section">
+
+      <!-- Filter pills -->
+      <div class="filter-row" data-reveal>
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="web-app">Web App</button>
+        <button class="filter-pill" data-filter="desktop-app">Desktop App</button>
+        <button class="filter-pill" data-filter="ui-ux">UI / UX</button>
+        <button class="filter-pill" data-filter="python">Python</button>
+        <button class="filter-pill" data-filter="rust">Rust</button>
+      </div>
+
+      <!-- Project grid -->
+      <div class="project-grid">
+
+        <article class="project-card" data-category="desktop-app" data-reveal data-delay="0">
+          <img src="images/Minerva.jpg" alt="Minerva Search Engine" />
+          <div class="overlay"></div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span>JavaScript</span>
+              <span>Desktop App</span>
+            </div>
+            <h3>Minerva Search Engine</h3>
+            <div class="project-meta">
+              <span>Literature Search Tool</span>
+              <span class="arrow">&#8599;</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="web-app" data-reveal data-delay="80">
+          <img src="images/SpecialSurgery.jpg" alt="Special Surgery Registration System" />
+          <div class="overlay"></div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span>React</span>
+              <span>Vite</span>
+              <span>Supabase</span>
+            </div>
+            <h3>Special Surgery Registration</h3>
+            <div class="project-meta">
+              <span>Web App &middot; 2024</span>
+              <span class="arrow">&#8599;</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="web-app, rust" data-reveal data-delay="160">
+          <img src="images/PondoBro.jpg" alt="PondoBro" />
+          <div class="overlay"></div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span>Rust</span>
+              <span>ASP.NET Core</span>
+              <span>SQLite</span>
+            </div>
+            <h3>PondoBro</h3>
+            <div class="project-meta">
+              <span>Web App &middot; 2024</span>
+              <span class="arrow">&#8599;</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="web-app, python" data-reveal data-delay="0">
+          <img src="images/SeqWatch.JPEG" alt="SeqWatch" />
+          <div class="overlay"></div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span>Python</span>
+              <span>Web App</span>
+            </div>
+            <h3>SeqWatch</h3>
+            <div class="project-meta">
+              <span>Monitoring Tool</span>
+              <span class="arrow">&#8599;</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="ui-ux" data-reveal data-delay="80">
+          <img src="images/EaseService.JPEG" alt="EaseService" />
+          <div class="overlay"></div>
+          <div class="card-body">
+            <div class="tag-row">
+              <span>Figma</span>
+              <span>UI / UX</span>
+            </div>
+            <h3>EaseService</h3>
+            <div class="project-meta">
+              <span>Design Prototype</span>
+              <span class="arrow">&#8599;</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty state -->
+      <div id="empty-state" class="empty-state" style="display:none;">
+        <span>No projects here yet</span>
+        <p style="color:rgba(251,207,232,0.4);margin-top:12px;font-size:0.9rem;">Try a different filter.</p>
+      </div>
+
+      <!-- Experience -->
+      <div class="experience-block" data-reveal>
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've Worked</h2>
+        <ul class="experience-list">
+          <li>
+            <div class="role-title">Researcher — Technology Office</div>
+            <span class="role-company">Amazon Web Services Cloud Clubs Philippines</span>
+            <p class="experience-date">2024 &ndash; Present</p>
+          </li>
+          <li>
+            <div class="role-title">Community Engagement Apprentice</div>
+            <span class="role-company">Yield Guild Games Pilipinas</span>
+            <p class="experience-date">September 2025 &ndash; January 2026</p>
+          </li>
+          <li>
+            <div class="role-title">Researcher and Event Organizer</div>
+            <span class="role-company">NADREMS, Inc.</span>
+            <p class="experience-date">June 2023 &ndash; August 2024</p>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="copyright">&copy; 2026 Merille Janine Pepito</span>
+    <div class="footer-socials">
+      <a href="mailto:mjortizpepito@gmail.com" aria-label="Email">@</a>
+      <a href="https://www.linkedin.com/in/merille-janine-pepito-ba5447296/" target="_blank" aria-label="LinkedIn">in</a>
+    </div>
+    <span class="footer-tag">Made with love &amp; magic</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
